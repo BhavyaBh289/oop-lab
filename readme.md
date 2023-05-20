@@ -1,13 +1,16 @@
 ## 🎯 Priority questions
 
 1.
-    1.1) Program to remove all repeated elements from an array                                                                                         1.2) Write     1.2) Write a Java program to find the common elements between two arrays of integers.
+    1.1) Program to remove all repeated elements from an array  
+    1.2) Write a Java program to find the common elements between two arrays of integers.
 
 2.
+
     2.1) Java Program to Count Number of Duplicate Words in String
     2.2) How to Check if the String Contains 'e' in umbrella
 
 3. 
+
     3.1)Java Program to Reverse a String. 
     3.2) Write a Java program to check that String is palindrome or not.
 
@@ -41,6 +44,7 @@ A person's name consists of only lower-case English letters and it may be in the
 
 
 11.
+
     11.1) Write a Java program that takes a number as input and prints its multiplication table up to 10. Test Data:
         Input a number: 8
         Expected Output :
@@ -49,6 +53,7 @@ A person's name consists of only lower-case English letters and it may be in the
         8 x 3 = 24
         ...
         8 x 10 = 80 
+		
     11.2) Write a java program to check that given number is prime or not.
 
 
@@ -59,6 +64,7 @@ Input number of rows (half of the diamond) :7 Expected Output :
 
 
 13.
+
     13.1) Write Java Program to find the transpose of a given matrix . 
     13.2) Write Java Program to find the number of the words in the given text file.
 
@@ -68,18 +74,20 @@ Input number of rows (half of the diamond) :7 Expected Output :
 
 15. Write a Java Program to iterate ArrayList using for-loop, iterator, and advance for-loop. Insert 3 Array List.Input 20 30 40 Output:
 
-    iterator Loop:
+    `iterator Loop:
         20
         30
-        40
-    Advanced For Loop:
+        40`
+		
+    `Advanced For Loop:
         20
         30
-        40
-    For Loop:
+        40`
+		
+    `For Loop:
         20
         30
-        40
+        40`
     
 16. Write a Java Program to count the number of words in a string using HashMap.Output:
 Input :Enter String: "This this is is done by Saket Saket";
@@ -89,13 +97,13 @@ Input :Enter String: "This this is is done by Saket Saket";
 
 18. Write a program to implement following inheritance. Accept data for 5 persons and display the name of employee having salary greater than 5000.
 
-    Class Name: Person
+    `Class Name: Person
     Member variables:
-    Name, age
+    Name, age`
 
-    Class Name: Employee
+    `Class Name: Employee
     Member variables:
-    Designation, salary
+    Designation, salary`
 
  19. Implementing “Multiple Inheritance”. Create a two interfaces Account containing methods set() and display() And interface Person containing methods store() and disp(). Derive a class Customer from Person and Account. Accept the name, account number, balance and display all the information related to account along with the interest. 
 
