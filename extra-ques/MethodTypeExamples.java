@@ -1,4 +1,4 @@
-public class MethodTypesExample {
+public abstract class MethodTypeExamples {
     // Instance method
     public void instanceMethod() {
         System.out.println("This is an instance method.");
@@ -20,7 +20,7 @@ public class MethodTypesExample {
     }
 
     // Constructor
-    public MethodTypesExample() {
+    public MethodTypeExamples() {
         System.out.println("Constructor called.");
     }
 
