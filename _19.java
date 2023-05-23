@@ -3,12 +3,12 @@ interface Account {
     void display();
 }
 
-interface Person {
+interface Person1 {
     void store(String name);
     void disp();
 }
 
-class Customer implements Account, Person {
+class Customer implements Account, Person1 {
     private String name;
     private String accNum;
     private double balance;
