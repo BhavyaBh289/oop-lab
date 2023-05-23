@@ -1,3 +1,5 @@
+package extra_ques;
+
 public abstract class MethodTypeExamples {
     // Instance method
     public void instanceMethod() {
@@ -42,7 +44,7 @@ public abstract class MethodTypeExamples {
     }
 
     public static void main(String[] args) {
-        MethodTypesExample obj = new MethodTypesExample(); // Creating an object
+        MethodTypeExamples obj = new MethodTypeExamples(); // Creating an object
 
         // Calling instance method
         obj.instanceMethod();
