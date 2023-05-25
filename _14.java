@@ -1,49 +1,142 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class _14 {
+public class _14 extends JFrame implements ActionListener {
+    private JTextField textField;
+    private JButton[] numberButtons;
+    private JButton addButton, subtractButton, multiplyButton, divideButton, equalButton, clearButton;
+    private JPanel panel;
 
-    public static void main(String args[]){
+    private String firstNumber;
+    private String operator;
 
-        JFrame jf = new JFrame("Swing calculator");
+    public _14() {
+        // Set up the frame
+        setTitle("Calculator");
+        setSize(300, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
 
-        JPanel panel = new JPanel();
+        // Create the text field for calculation question
+        textField = new JTextField();
+        textField.setFont(new Font("Arial", Font.PLAIN, 20));
+        textField.setHorizontalAlignment(JTextField.RIGHT);
+        textField.setEditable(false);
 
-        JTextField textField = new JTextField(480);
+        // Create the number buttons
+        numberButtons = new JButton[10];
+        for (int i = 0; i < 10; i++) {
+            numberButtons[i] = new JButton(String.valueOf(i));
+            numberButtons[i].setFont(new Font("Arial", Font.PLAIN, 20));
+            numberButtons[i].addActionListener(this);
+        }
 
-        JButton _7 = new JButton("7");
-        JButton _8 = new JButton("8");
-        JButton _9 = new JButton("9");
-        JButton _product = new JButton("*");
+        // Create the operator buttons
+        addButton = new JButton("+");
+        subtractButton = new JButton("-");
+        multiplyButton = new JButton("*");
+        divideButton = new JButton("/");
+        equalButton = new JButton("=");
+        clearButton = new JButton("C");
 
-        JButton _4 = new JButton("4");
-        JButton _5 = new JButton("5");
-        JButton _6 = new JButton("6");
-        JButton _difference = new JButton("-");
+        addButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        subtractButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        multiplyButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        divideButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        equalButton.setFont(new Font("Arial", Font.PLAIN, 20));
+        clearButton.setFont(new Font("Arial", Font.PLAIN, 20));
 
-        JButton _1 = new JButton("1");
-        JButton _2 = new JButton("2");
-        JButton _3 = new JButton("3");
-        JButton _sum = new JButton("+");
+        addButton.addActionListener(this);
+        subtractButton.addActionListener(this);
+        multiplyButton.addActionListener(this);
+        divideButton.addActionListener(this);
+        equalButton.addActionListener(this);
+        clearButton.addActionListener(this);
 
-        JButton _clear = new JButton("C");
-        JButton _0 = new JButton("0");
-        JButton _equals = new JButton("=");
-        JButton _division = new JButton("/");
+        // Create panel and add components
+        panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 4));
+        panel.add(numberButtons[7]);
+        panel.add(numberButtons[8]);
+        panel.add(numberButtons[9]);
+        panel.add(addButton);
+        panel.add(numberButtons[4]);
+        panel.add(numberButtons[5]);
+        panel.add(numberButtons[6]);
+        panel.add(subtractButton);
+        panel.add(numberButtons[1]);
+        panel.add(numberButtons[2]);
+        panel.add(numberButtons[3]);
+        panel.add(multiplyButton);
+        panel.add(clearButton);
+        panel.add(numberButtons[0]);
+        panel.add(equalButton);
+        panel.add(divideButton);
 
-        panel.add(_7); panel.add(_8); panel.add(_9); panel.add(_product);
-        panel.add(_4); panel.add(_5); panel.add(_6); panel.add(_difference);
-        panel.add(_1); panel.add(_2); panel.add(_3); panel.add(_sum);
-        panel.add(_clear); panel.add(_0); panel.add(_equals); panel.add(_division);
 
-        panel.setLayout(new GridLayout(4, 4, 2, 2));
+        // Add components to the frame
+        add(textField, BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
 
-        jf.getContentPane().add(textField, BorderLayout.NORTH);
-        jf.getContentPane().add(panel, BorderLayout.CENTER);
-
-        jf.setSize(500, 500);
-        jf.setVisible(true);
-
+        // Display the frame
+        setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Handle number button clicks
+        for (int i = 0; i < 10; i++) {
+            if (e.getSource() == numberButtons[i]) {
+                textField.setText(textField.getText() + i);
+                return;
+            }
+        }
+
+        // Handle operator button clicks
+        if (e.getSource() == addButton || e.getSource() == subtractButton || e.getSource() == multiplyButton || e.getSource() == divideButton) {
+            firstNumber = textField.getText();
+            operator = ((JButton) e.getSource()).getText();
+            textField.setText("");
+        }
+
+        // Handle equal button click
+        if (e.getSource() == equalButton) {
+            String secondNumber = textField.getText();
+            double result = 0.0;
+
+            switch (operator) {
+                case "+":
+                    result = Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber);
+                    break;
+                case "-":
+                    result = Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber);
+                    break;
+                case "*":
+                    result = Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber);
+                    break;
+                case "/":
+                    result = Double.parseDouble(firstNumber) / Double.parseDouble(secondNumber);
+                    break;
+            }
+
+            textField.setText(String.valueOf(result));
+        }
+
+        // Handle clear button click
+        if (e.getSource() == clearButton) {
+            textField.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Run the GUI on the event dispatch thread
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new _14();
+            }
+        });
+    }
 }
