@@ -1,3 +1,4 @@
+/*
 package extra_ques;
 
 public abstract class MethodTypeExamples {
@@ -44,27 +45,30 @@ public abstract class MethodTypeExamples {
     }
 
     public static void main(String[] args) {
-        MethodTypeExamples obj = new MethodTypeExamples(); // Creating an object
+        */
+/*MethodTypeExamples obj = new MethodTypeExamples();*//*
+ // Creating an object
 
         // Calling instance method
-        obj.instanceMethod();
+        //obj.instanceMethod();
 
         // Calling static method
         staticMethod();
 
         // Calling getter method
-        String greeting = obj.getGreeting();
-        System.out.println("Greeting: " + greeting);
+        //String greeting = obj.getGreeting();
+        //System.out.println("Greeting: " + greeting);
 
         // Calling setter method
-        obj.setGreeting("Hi!");
+        //obj.setGreeting("Hi!");
 
         // Calling overloaded methods
         obj.overloadedMethod();
-        obj.overloadedMethod(42);
+        //obj.overloadedMethod(42);
 
         // Calling final method
         obj.finalMethod();
     }
 }
 
+*/
